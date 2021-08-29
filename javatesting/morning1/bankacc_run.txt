@@ -1,0 +1,21 @@
+package morning1;
+
+import java.util.Scanner;
+
+public class bankacc_run {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Scanner s=new Scanner(System.in);
+     Current cr=new Current();
+     cr.getdata();
+     cr.putdata();
+     cr.deposit1();
+     cr.withdraw();
+     Saving sr=new Saving();
+     sr.getdata();
+     sr.putdata();
+     sr.withdraw1();
+	}
+
+}

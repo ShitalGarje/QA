@@ -1,0 +1,34 @@
+package morning1;
+
+public class car {
+	private int speed;
+	private String color;
+	
+   public int getSpeed(int speed)
+   {
+	return speed;
+   }
+   public void setGear(int speed1)
+   {
+	this.speed=speed1;
+   }
+   public int getColor(String color)
+  {
+	return color;
+  }
+  public void setColor(String color)
+  {
+	this.color=color;
+  }
+  
+  void start()
+  {
+	  System.out.println("cars is tarted");
+	  
+  }
+  void stop()
+  {
+	  System.out.println("car is stoped");
+	  
+}
+}	

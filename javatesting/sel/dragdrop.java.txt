@@ -1,0 +1,37 @@
+package sel;
+
+import java.awt.Desktop.Action;
+import java.awt.Toolkit;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class dragdrop {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		 System.setProperty("webdriver.chrome.driver","D:\\worksoft\\chromedriver_win32\\chromedriver.exe");  
+	      
+	       // Instantiate a ChromeDriver class.       
+	    WebDriver driver=new ChromeDriver(); 
+      driver.get("http://jqueryui.com/resources/demos/droppable/default.html");
+      Thread.sleep(2000);
+      Actions act = new Actions(driver);
+      
+      
+      WebElement src = driver.findElement(By.xpath("//p[contains(text(),'Drag me to my target')]"));
+     WebElement trgt=driver.findElement(By.xpath("//div[@id='droppable"));
+      
+      Thread.sleep(1000);
+      
+      act.dragAndDrop(src,trgt).build().perform();
+      Thread.sleep(3000);
+      driver.close();
+	}
+
+}
+	

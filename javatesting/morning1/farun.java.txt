@@ -1,0 +1,12 @@
+package morning1;
+
+public class fanrun {
+ public static void main(String[] args) 
+ {
+  fan f1=new fan();
+	 f1.setSpeed(2);
+	 System.out.println(f1.getSpeed());
+	 f1.setColor=("black");
+	 System.out.println(f1.getColor()); 
+ }
+}

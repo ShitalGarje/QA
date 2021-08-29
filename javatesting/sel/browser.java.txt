@@ -1,0 +1,65 @@
+package sel;
+import java.awt.List;
+import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class browser {
+
+public static void main(String[] args) throws InterruptedException {
+    System.setProperty("webdriver.chrome.driver", "C:\\Work\\chromedriver_win32\\chromedriver.exe");
+    WebDriver driver = new ChromeDriver();
+
+    driver.manage().window().maximize();
+    driver.manage().deleteAllCookies();
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
+    String url = "http://automationpractice.com/index.php?controller=authentication&amp;back=my-account";
+    driver.get(url);
+
+
+
+    WebElement infoLinkSec = driver.findElement(By.xpath("//*[@id=\"block_various_links_footer\"]"));
+    int noOfLink = infoLinkSec.findElements(By.tagName("a")).size();
+    System.out.println(noOfLink);
+
+
+    Iterator<WebElement> links = infoLinkSec.findElements(By.tagName("a")).iterator();
+
+
+
+
+
+    WebElement[] link = new WebElement[noOfLink];
+
+
+    for (int i = 0; i< noOfLink; i++ ) {
+        link[i] = links.next();
+            }
+
+
+    for (int i = 0; i< noOfLink; i++ ) {
+
+        link[i].click();
+        Thread.sleep(2000L);
+
+        String cUrl = driver.getCurrentUrl();
+        String cPageTitle = driver.getTitle();
+        System.out.println((i+1) +". The current url is "+cUrl+"\nThe current page title is "+cPageTitle);
+
+        driver.navigate().back();
+        driver.navigate().refresh();
+        Thread.sleep(3000L);
+        }
+
+
+}
+
+    }
+

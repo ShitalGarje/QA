@@ -1,0 +1,44 @@
+package sel;
+
+import java.sql.Driver;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class table2 {
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		 System.setProperty("webdriver.chrome.driver","D:\\worksoft\\chromedriver_win32\\chromedriver.exe");  
+	           // Instantiate a ChromeDriver class.       
+	    WebDriver driver=new ChromeDriver(); 
+        driver.get("Http://www.rediff.com");
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //WebElement cricket = driver.findElement(By.tagName("a"));
+        WebElement cricket = driver.findElement(By.cssSelector(".secstorybox.sports"));
+        
+        List<WebElement> links= cricket.findElements(By.tagName("a"));
+		for(int i=0; i < links.size(); i++)
+        { 
+        	System.out.println(links.get(i).getText());
+        	
+        }
+        cricket.getText();
+        
+        
+        //String row = *//*[@id='leftcontainer']/table/tbody/tr[1]/td*;
+        //int rowData = driver.findElements(By.xpath(col)).size();
+
+           
+
+	}
+
+}

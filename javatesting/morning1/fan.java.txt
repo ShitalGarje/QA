@@ -1,0 +1,34 @@
+package morning1;
+
+public class fan {
+	private int speed;
+	private String color;
+	
+   public int getSpeed()
+   {
+	return speed;
+   }
+   public void setGear(int speed)
+   {
+	this.speed=speed;
+   }
+   public int getColor()
+  {
+	return color;
+  }
+  public void setColor(String color)
+  {
+	this.color=color;
+  }
+  
+  void start()
+  {
+	  System.out.println("fan started");
+	  
+  }
+  void stop()
+  {
+	  System.out.println("fan is stoped");
+	  
+}
+}	
